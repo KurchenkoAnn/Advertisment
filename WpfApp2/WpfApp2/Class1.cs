@@ -8,13 +8,17 @@ namespace WpfApp2
 {
     class User : IDataErrorInfo
     {
+         
+     
         public string Login { get; set; }
         public string Password { get; set; }
         public string Name { get; set; }
+        public string Phone { get; set; }
         public string Mail { get; set; }
         public int Age { get; set; }
+        public string City { get; set; }
         public string Error => throw new NotImplementedException();
-
+        public char c = '*';
         //public string City { get; set; }
         public string this[string columnName]
         {
@@ -37,6 +41,14 @@ namespace WpfApp2
                     }
 
                 }
+                if (columnName == "Phone" )
+                {
+                    if (Phone.Length == 10 )
+                    {
+                        m = $"({Phone.Substring(0, 3)}) {Phone.Substring(3, 3)}-{Phone.Substring(6, 4)}";
+                    }
+
+                }
                 if (columnName == "City")
                 {
                     if (Char.IsUpper(Name[0]) == false)
@@ -45,20 +57,29 @@ namespace WpfApp2
                     }
 
                 }
-                if (columnName == "Mail")
+                if (columnName == "Login" )
                 {
-                    if (!Mail.Contains("@"))
+                    if (Login.Contains("bad"))
                     {
-                        m = "Mail must contain @";
+                        m = "bad language";
+                    }
+                    if (columnName == "Login")
+                    {
+                        if (!Mail.Contains("@"))
+                        {
+                            m = "Mail must contain @";
+                        }
                     }
                 }
-                //switch (columnName)
-                //{
-                //    case "Login":
-                //        if (Login.Contains("bad"))
-                //            m = "bad language";
-                //        break;
-                //}
+                if (columnName == "Password")
+                {
+                   
+                    if (Password.Length <= 8)
+                    {
+                        m = "The password is too small";
+                    }
+                }
+                
                 return m;
                
             }

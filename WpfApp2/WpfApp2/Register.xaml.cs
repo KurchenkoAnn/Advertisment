@@ -19,6 +19,7 @@ namespace WpfApp2
     /// </summary>
     public partial class Window2 : Window
     {
+        User user=new User();
         public Window2()
         {
             InitializeComponent();
@@ -26,8 +27,17 @@ namespace WpfApp2
 
         private void Button_ClichR(object sender, RoutedEventArgs e)
         {
+            user.Name = Tb1.Text;
+            user.Age = Convert.ToInt32(Tb2.Text);
+            user.City = Tb3.Text;
+            user.Phone = Tb4.Text;
+            user.Login = Tb5.Text;
+            user.Password=Tb6.Password;
             
+            this.Close();
+            MessageBox.Show("Welcome! You register!");
         }
+        
 
        
     }
