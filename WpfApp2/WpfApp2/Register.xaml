@@ -1,0 +1,32 @@
+﻿<Window x:Class="WpfApp2.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="Window2" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width="110"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <TextBlock Margin="25,5,0,5" Text="Name" FontSize="20"/>
+            <TextBlock Margin="25,5,0,5" Text="Age" FontSize="20"/>
+            <TextBlock Margin="25,17,0,5" Text="City" FontSize="20"/>
+            <TextBlock Margin="25,15,0,5" Text="Phone" FontSize="20"/>
+            <TextBlock Margin="25,10,0,5" Text="Login" FontSize="20"/>
+            <TextBlock Margin="25,10,0,5" Text="Password" FontSize="20"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <TextBox Margin="25,5,0,5"  FontSize="20"/>
+            <TextBox Margin="25,5,0,5"  FontSize="20"/>
+            <TextBox Margin="25,5,0,5"  FontSize="20"/>
+            <TextBox Margin="25,5,0,5"  FontSize="20"/>
+            <TextBox Margin="25,5,0,5"  FontSize="20"/>
+            <TextBox Margin="25,5,0,5"  FontSize="20"/>
+            <Button Margin="45,55,45,5"  Content="Register" Height="50" Width="300" Click="Button_ClichR" FontSize="20"/>
+        </StackPanel>
+    </Grid>
+</Window>
