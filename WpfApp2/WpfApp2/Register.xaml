@@ -12,20 +12,22 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
-            <TextBlock Margin="25,5,0,5" Text="Name" FontSize="20"/>
+            <TextBlock Margin="25,5,0,5" Text="Name" FontSize="20" />
             <TextBlock Margin="25,5,0,5" Text="Age" FontSize="20"/>
             <TextBlock Margin="25,17,0,5" Text="City" FontSize="20"/>
             <TextBlock Margin="25,15,0,5" Text="Phone" FontSize="20"/>
-            <TextBlock Margin="25,10,0,5" Text="Login" FontSize="20"/>
+            <TextBlock Margin="25,10,0,5" Text="Mail" FontSize="20"/>
             <TextBlock Margin="25,10,0,5" Text="Password" FontSize="20"/>
+           
         </StackPanel>
         <StackPanel Grid.Column="1">
-            <TextBox Margin="25,5,0,5"  FontSize="20"/>
-            <TextBox Margin="25,5,0,5"  FontSize="20"/>
-            <TextBox Margin="25,5,0,5"  FontSize="20"/>
-            <TextBox Margin="25,5,0,5"  FontSize="20"/>
-            <TextBox Margin="25,5,0,5"  FontSize="20"/>
-            <TextBox Margin="25,5,0,5"  FontSize="20"/>
+            <TextBox Margin="25,5,0,5"  FontSize="20" Text="{Binding Path=Name,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Margin="25,5,0,5"  FontSize="20" Text="{Binding Path=Age,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Margin="25,5,0,5"  FontSize="20" Text="{Binding Path=City,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Margin="25,5,0,5"  FontSize="20" Text="{Binding Path=Phone,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}"/>
+           
+            <TextBox Margin="25,5,0,5"  FontSize="20" Text="{Binding Path=Name,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Margin="25,5,0,5"  FontSize="20" Text="{Binding Path=Name,ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}"/>
             <Button Margin="45,55,45,5"  Content="Register" Height="50" Width="300" Click="Button_ClichR" FontSize="20"/>
         </StackPanel>
     </Grid>
