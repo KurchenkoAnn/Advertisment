@@ -24,6 +24,7 @@ namespace WpfApp2
     public partial class MainWindow : Window
     { 
         ObservableCollection<Advertisement> adv= new ObservableCollection<Advertisement>();
+        User CurrentUser = null;
         public MainWindow()
         {
 
@@ -38,7 +39,7 @@ namespace WpfApp2
         private void Button_Click(object sender, RoutedEventArgs e)
         {
            
-            Window1 add = new Window1();
+            Window1 add = new Window1(CurrentUser);
             add.ShowDialog();
             Advertisement a = add.a;
             adv.Add(a);
@@ -48,20 +49,12 @@ namespace WpfApp2
         {
             Window2 reg = new Window2();
             reg.ShowDialog();
-
-            
+            CurrentUser = reg.user;
+            Title = "Cuurent User: " +  CurrentUser.Name;
+            Add_Button.IsEnabled = true;
         }
 
        
     }
-    public class Advertisement
-    {
-        public string Tema { get; set; }
-        public string Autor { get; set; }
-        public string Category { get; set; }
-        public string Description { get; set; }
-        public string ImagePath { get; set; }
-        public double Price { get; set; }
-      
-    }
+    
 }

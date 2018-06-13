@@ -6,31 +6,52 @@
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
         Title="MainWindow" Height="770.635" Width="790.476">
-    <StackPanel Margin="0,0,2,2">
-        <StackPanel.Background>
+    <Grid>
+        <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="Black" Offset="0"/>
                 <GradientStop Color="White" Offset="1"/>
             </LinearGradientBrush>
-        </StackPanel.Background>
-        <ListView x:Name="lv" Height="613">
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <ListView x:Name="lv" Grid.Row="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel HorizontalAlignment="Center"></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
-                        <TextBlock HorizontalAlignment="Center" FontSize="30" Text="{Binding Tema}"/>
-                        <TextBlock HorizontalAlignment="Center" FontSize="30" Text="{Binding Category}"/>
-                        <TextBlock HorizontalAlignment="Center" FontSize="25" Text="{Binding Autor}"/>
-                        <TextBlock HorizontalAlignment="Center" FontSize="25" Text="{Binding Description}"/>
-                        <Image HorizontalAlignment="Center" Source="{Binding ImagePath}" Height="250" Width="250" />
-                        <TextBlock HorizontalAlignment="Center" FontSize="25" Text="{Binding Price}"/>
-                    </StackPanel>
+                    <Border BorderBrush="Black" BorderThickness="2" CornerRadius="10" Height="425" Width="250" Margin="5">
+                        <StackPanel>
+                            <TextBlock HorizontalAlignment="Center" FontSize="22" Text="{Binding Tema}"/>
+                            <TextBlock HorizontalAlignment="Center" FontSize="22" Text="{Binding Category}"/>
+                            <TextBlock HorizontalAlignment="Center" FontSize="18" Text="{Binding Autor}"/>
+                            <TextBlock Height="75" HorizontalAlignment="Center" FontSize="18" Text="{Binding Description}" TextWrapping="Wrap"/>
+                            <Image HorizontalAlignment="Center" Source="{Binding ImagePath}" Height="200" Width="200" />
+                            <TextBlock HorizontalAlignment="Center" FontSize="18" Text="{Binding Price,StringFormat={}{0} GRN }"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" HorizontalAlignment="Left" FontSize="18" Text="{Binding User.Phone}" Margin="10,0,0,0"/>
+                                <TextBlock Grid.Column="1" HorizontalAlignment="Right" FontSize="18" Text="{Binding User.Name}" Margin="0,0,10,0"/>
+                            </Grid>
+                            
+                        </StackPanel>
+                    </Border>
                 </DataTemplate>
             </ListView.ItemTemplate>
           
 
         </ListView>
-        <Button Height="50" Content="Add your advertisement" Click="Button_Click" Margin="296,0,271,0"/>
-        <Button Height="50" Content="Register" Click="Button_Click3" Margin="296,0,271,0"/>
-    </StackPanel>
+        <Button Width="100" Grid.Row="1" Content="Add your advertisement" Click="Button_Click" IsEnabled="False" Name="Add_Button" HorizontalAlignment="Center"/>
+        <Button Width="100" Grid.Row="2" Content="Register" Click="Button_Click3" Name="Reg_Button" HorizontalAlignment="Center"/>
+    </Grid>
 </Window>
     

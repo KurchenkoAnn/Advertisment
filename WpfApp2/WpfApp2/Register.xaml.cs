@@ -19,7 +19,7 @@ namespace WpfApp2
     /// </summary>
     public partial class Window2 : Window
     {
-        User user=new User();
+        public User user=new User();
         public Window2()
         {
             InitializeComponent();

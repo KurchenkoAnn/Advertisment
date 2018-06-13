@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 namespace WpfApp2
 {
-    class User : IDataErrorInfo
+    public class User : IDataErrorInfo
     {
          
      
