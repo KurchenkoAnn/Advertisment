@@ -53,7 +53,7 @@ namespace WpfApp2
         private void Button_Click4(object sender, RoutedEventArgs e)
         {
             
-            a.Autor=tb1.Text;
+            //a.Autor=tb1.Text;
             a.Tema = tb2.Text;
             a.Category = tb3.Text;
             a.Price = Convert.ToDouble(tb4.Text);

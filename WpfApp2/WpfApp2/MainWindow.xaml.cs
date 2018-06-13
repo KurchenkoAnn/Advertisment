@@ -52,6 +52,10 @@ namespace WpfApp2
             CurrentUser = reg.user;
             Title = "Cuurent User: " +  CurrentUser.Name;
             Add_Button.IsEnabled = true;
+            if (CurrentUser != null)
+            {
+                Reg_Button.IsEnabled = false;
+            }
         }
 
        

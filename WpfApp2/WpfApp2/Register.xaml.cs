@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace WpfApp2
 {
@@ -20,11 +22,25 @@ namespace WpfApp2
     public partial class Window2 : Window
     {
         public User user=new User();
+        private List<User> list;
+
         public Window2()
         {
             InitializeComponent();
         }
+        private void ReadXML()
+        {
+            if (File.Exists("user.xml") == true)
+            {
 
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<User>));
+                using (FileStream fs = new FileStream("user.xml", FileMode.Open))
+                {
+                    list = (List<User>)xmlSerializer.Deserialize(fs);
+                }
+            }
+
+        }
         private void Button_ClichR(object sender, RoutedEventArgs e)
         {
             user.Name = Tb1.Text;

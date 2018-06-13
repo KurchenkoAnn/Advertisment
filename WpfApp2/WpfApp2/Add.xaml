@@ -13,7 +13,7 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
 
-            <TextBlock Margin="25,5,0,5" Text="Author" FontSize="20"   />
+            
             <TextBlock Margin="25,5,0,5" Text="Tema" FontSize="20"     />
             <TextBlock Margin="25,5,0,5" Text="Category" FontSize="20" />
             <TextBlock Margin="25,5,0,5" Text="Image" FontSize="20"    />
@@ -21,7 +21,7 @@
 
         </StackPanel>
         <StackPanel Grid.Column="1">
-            <TextBox Margin="25,5,25,5" FontSize="15"   Name="tb1" />
+           
             <TextBox Margin="25,5,25,5" FontSize="15"  Name="tb2" />
             <TextBox Margin="25,5,25,5" FontSize="15"  Name="tb3"/>                                                                           
             <Button Content="Image"  Margin="25,10,25,5" Click="Button_Click1"/>

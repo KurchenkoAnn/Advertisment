@@ -27,7 +27,8 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="Black" BorderThickness="2" CornerRadius="10" Height="425" Width="250" Margin="5">
-                        <StackPanel>
+                        <StackPanel Background="Aqua">
+                            
                             <TextBlock HorizontalAlignment="Center" FontSize="22" Text="{Binding Tema}"/>
                             <TextBlock HorizontalAlignment="Center" FontSize="22" Text="{Binding Category}"/>
                             <TextBlock HorizontalAlignment="Center" FontSize="18" Text="{Binding Autor}"/>
