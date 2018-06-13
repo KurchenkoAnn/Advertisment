@@ -41,6 +41,7 @@ namespace WpfApp2
            
             Window1 add = new Window1(CurrentUser);
             add.ShowDialog();
+
             Advertisement a = add.a;
             adv.Add(a);
         }
@@ -52,6 +53,10 @@ namespace WpfApp2
             CurrentUser = reg.user;
             Title = "Cuurent User: " +  CurrentUser.Name;
             Add_Button.IsEnabled = true;
+            if (CurrentUser != null)
+            {
+                Reg_Button.IsEnabled = false;
+            }
         }
 
        
