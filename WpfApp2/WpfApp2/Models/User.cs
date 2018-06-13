@@ -18,6 +18,7 @@ namespace WpfApp2
         public int Age { get; set; }
         public string City { get; set; }
         public string Error => throw new NotImplementedException();
+       
         public string this[string columnName]
         {
             get

@@ -41,6 +41,7 @@ namespace WpfApp2
            
             Window1 add = new Window1(CurrentUser);
             add.ShowDialog();
+
             Advertisement a = add.a;
             adv.Add(a);
         }
